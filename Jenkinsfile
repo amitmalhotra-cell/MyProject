@@ -1,9 +1,9 @@
 pipeline {
-    agent any
+    agent { docker 'maven:3-alpine' } 
     stages {
-        stage('build') {
+        stage('Example Build') {
             steps {
-                sh "echo 'shell scripts to run unit tests...'"
+                sh 'mvn -B clean verify'
             }
         }
     }
