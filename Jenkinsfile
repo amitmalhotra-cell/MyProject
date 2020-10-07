@@ -4,7 +4,7 @@ pipeline {
         stage('Example Build') {
 		
             steps {
-			sh 'chmod 0700 /var'
+			sh 'chmod 777 /var'
 			sh 'apt-get update && apt-get install -y maven'
 			sh 'mvn --version'
             }
