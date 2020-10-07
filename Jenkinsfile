@@ -1,5 +1,10 @@
 pipeline {
-    agent { docker 'maven:3-alpine' } 
+    agent {
+                docker {
+                  label 'dockerserver'  // both label and image
+                  image 'maven:3-alpine'
+                }
+            }
     stages {
         stage('Example Build') {
             steps {
