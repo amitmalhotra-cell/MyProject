@@ -1,15 +1,12 @@
 pipeline {
-    agent { label 'dockerserver' }
+    agent none
     stages {
         stage('Example Build') {
 		agent {
-                docker {
-                  label 'dockerserver'  // both label and image
-                  image 'maven:3-alpine'
-                }
+                docker { image 'maven:3-alpine' }
             }
             steps {
-                sh 'mvn -B clean verify'
+                sh 'mvn --version'
             }
         }
     }
