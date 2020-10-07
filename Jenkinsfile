@@ -4,9 +4,8 @@ pipeline {
         stage('Example Build') {
 		
             steps {
-			sh 'apt-get update -y'
-			sh 'apt-get install -y maven'
-            sh 'mvn --version'
+			sh 'apt-get update && apt-get install -y maven'
+			sh 'mvn --version'
             }
         }
     }
