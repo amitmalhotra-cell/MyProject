@@ -2,11 +2,11 @@ pipeline {
     agent none
     stages {
         stage('Example Build') {
-		agent {
-                docker { image 'maven:3-alpine' }
-            }
+		
             steps {
-                sh 'mvn --version'
+			sh 'apt-get update -y'
+			sh 'apt-get install -y maven'
+            sh 'mvn --version'
             }
         }
     }
