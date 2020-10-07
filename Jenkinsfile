@@ -1,5 +1,4 @@
 pipeline {
-    agent { docker { image 'sitespeedio/sitespeed.io' } }
     stages {
         stage('build') {
             steps {
